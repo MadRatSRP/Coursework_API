@@ -3,9 +3,12 @@ package com.madrat.kursovaya.network
 import android.content.Context
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.madrat.kursovaya.R
+import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
+
 
 class NetworkClient {
     companion object {
@@ -18,8 +21,8 @@ class NetworkClient {
 
                 retrofit = Retrofit.Builder()
                     .baseUrl(url)
-                    //.addConverterFactory(GsonConverterFactory.create())
-                    //.addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                     .client(client)
                     .build()
             }

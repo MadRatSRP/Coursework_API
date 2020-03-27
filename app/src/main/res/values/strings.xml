@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Kursovaya</string>
-    <string name="URL">GAGAGA</string>
+
+    <string name="URL">https://api.spoonacular.com/</string>
+    <string name="API_KEY">bf02524398c84d89b09c4f9f0ac55831</string>
 </resources>

@@ -22,6 +22,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
 
 }
 
@@ -32,7 +36,8 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // Retrofit
-    def retrofit = "2.7.2"
+    def retrofit = '2.8.1'
+    def retrofit_rxjava3_adapter = "3.0.0"
 
     // Chucker
     def chucker = "3.1.2"
@@ -55,7 +60,7 @@ dependencies {
     // Testing
 
     // Junit
-    def junit = "4.12"
+    def junit = '4.13'
     def junit_runner = "1.1.1"
 
     // Espresso
@@ -65,6 +70,8 @@ dependencies {
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
+    implementation "com.github.akarnokd:rxjava3-retrofit-adapter:$retrofit_rxjava3_adapter"
 
     // Chucker
     debugImplementation "com.github.ChuckerTeam.Chucker:library:$chucker"
