@@ -26,27 +26,73 @@ android {
 }
 
 dependencies {
-    // Network
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
     // Retrofit
     def retrofit = "2.7.2"
+
     // Chucker
     def chucker = "3.1.2"
 
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    // AppCompat
+    def app_compat = "1.1.0"
+
+    //  Core-KTX
+    def core_ktx = "1.2.0"
+
+    // ConstraintLayout
+    def constraint_layout = "1.1.3"
+
+    // Google Gson
+    def google_gson = "2.8.6"
+
+    // RxJava
+    def rx_java = "3.0.1"
+
+    // Testing
+
+    // Junit
+    def junit = "4.12"
+    def junit_runner = "1.1.1"
+
+    // Espresso
+    def espresso = "3.2.0"
+
+
 
     // Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit"
+
     // Chucker
     debugImplementation "com.github.ChuckerTeam.Chucker:library:$chucker"
     releaseImplementation "com.github.ChuckerTeam.Chucker:library-no-op:$chucker"
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    // AppCompat
+    implementation "androidx.appcompat:appcompat:$app_compat"
+
+    // Core-KTX
+    implementation "androidx.core:core-ktx:$core_ktx"
+
+    // ConstraintLayout
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout"
+
+    // Google Gson
+    implementation "com.google.code.gson:gson:$google_gson"
+
+    // RxJava
+    implementation "io.reactivex.rxjava3:rxjava:$rx_java"
+
+    // Testing
+
+    // Junit
+    testImplementation "junit:junit:$junit"
+    androidTestImplementation "androidx.test.ext:junit:$junit_runner"
+
+    // Espresso
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
 }
 repositories {
     // Chucker
