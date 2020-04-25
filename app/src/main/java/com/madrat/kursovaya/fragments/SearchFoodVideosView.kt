@@ -1,11 +1,15 @@
-package com.madrat.kursovaya
+package com.madrat.kursovaya.fragments
 
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.chuckerteam.chucker.api.ChuckerCollector
+import com.madrat.kursovaya.R
+import com.madrat.kursovaya.adapters.SearchFoodVideosAdapter
+import com.madrat.kursovaya.databinding.FragmentSearchFoodVideosBinding
 import com.madrat.kursovaya.model.search_food_videos.SearchFoodVideosResponse
 import com.madrat.kursovaya.model.search_food_videos.Video
 import com.madrat.kursovaya.network.NetworkClient
@@ -14,26 +18,31 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.schedulers.Schedulers
 
-class MainActivity : AppCompatActivity() {
+class SearchFoodVideosView: Fragment() {
+    // ViewBinding variables
+    private var mBinding: FragmentSearchFoodVideosBinding? = null
+    private val binding get() = mBinding!!
 
-    lateinit var recyclerView: RecyclerView
-    lateinit var adapter: SearchFoodVideosAdapter
+    private var adapter: SearchFoodVideosAdapter? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        mBinding = FragmentSearchFoodVideosBinding.inflate(inflater,
+            container, false)
+        val view = binding.root
 
         adapter = SearchFoodVideosAdapter()
+        binding.recyclerView.adapter = adapter
+        binding.recyclerView.linearManager()
 
-        recyclerView = findViewById(R.id.recyclerView)
-
-        recyclerView.adapter = adapter
-        recyclerView.linearManager()
-
-        val apiKey = applicationContext.getString(R.string.API_KEY)
+        return view
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val apiKey = view.context.getString(R.string.API_KEY)
 
         val repository = getSearchFoodVideosObservable(
-            applicationContext, apiKey, "chicken soup", 1
+            view.context, apiKey, "chicken soup", 1
         )
         repository?.subscribe(
             {response ->
@@ -42,6 +51,11 @@ class MainActivity : AppCompatActivity() {
                 doOnError(throwable)},
             { })
     }
+    override fun onDestroyView() {
+        super.onDestroyView()
+    }
+
+
     fun doOnNext(videos: ArrayList<Video>) {
 
         showListOfVideos(videos)
@@ -51,7 +65,7 @@ class MainActivity : AppCompatActivity() {
     }
     fun doOnError(throwable: Throwable) {
         throwable.printStackTrace()
-        ChuckerCollector(applicationContext).onError("TAG", throwable)
+        context?.let { ChuckerCollector(it).onError("TAG", throwable) }
 
         /*if (throwable is IOException) {
             view.showMessageByMessageId(Messages.ON_ERROR_NO_INTERNET_CONNECTION)
@@ -62,8 +76,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun showListOfVideos(videos: ArrayList<Video>) {
-        adapter.updateListOfVideos(videos)
-        recyclerView.adapter = adapter
+        adapter?.updateListOfVideos(videos)
+        binding.recyclerView.adapter = adapter
     }
 
     /*override fun loadListOfShares() {
@@ -96,7 +110,10 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    private fun getSearchFoodVideosObservable(context: Context, apiKey: String, query: String, number: Int)
+    private fun getSearchFoodVideosObservable(context: Context,
+                                              apiKey: String,
+                                              query: String,
+                                              number: Int)
             : Observable<SearchFoodVideosResponse>? {
         return NetworkClient.instance(context)
             ?.getSearchFoodVideos(apiKey, query, number)

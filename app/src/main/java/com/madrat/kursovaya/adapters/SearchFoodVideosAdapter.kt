@@ -1,8 +1,9 @@
-package com.madrat.kursovaya
+package com.madrat.kursovaya.adapters
 
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.madrat.kursovaya.R
 import com.madrat.kursovaya.model.search_food_videos.Video
 import com.madrat.kursovaya.util.inflate
 import kotlinx.android.extensions.LayoutContainer

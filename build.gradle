@@ -2,25 +2,25 @@
 
 buildscript {
     // Kotlin
-    ext.kotlinVersion = '1.3.71'
+    ext.kotlinVersion = '1.3.72'
 
     // Gradle
-    ext.gradleVersion = "3.6.2"
+    ext.gradleVersion = '3.6.3'
 
     // AndroidX Navigation
-    ext.navigationVersion = "2.3.0-alpha04"
+    ext.navigationVersion = '2.2.2'
 
     repositories {
         google()
         jcenter()
     }
     dependencies {
-        // Gradle
-        classpath "com.android.tools.build:gradle:$gradleVersion"
-
         // Kotlin
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
 
+        // Gradle
+        classpath "com.android.tools.build:gradle:$gradleVersion"
+        
         // AndroidX Navigation Safe-Args
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
 
