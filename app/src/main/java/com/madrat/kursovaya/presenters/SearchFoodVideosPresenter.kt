@@ -14,7 +14,7 @@ class SearchFoodVideosPresenter(private val view: SearchFoodVideosMVP.View,
         val repository = repository.getSearchFoodVideosObservable(
             context, apiKey, query, number
         )
-        repository?.subscribe(
+        repository.subscribe(
             {response ->
                 doOnNext(response.videos)},
             {throwable->

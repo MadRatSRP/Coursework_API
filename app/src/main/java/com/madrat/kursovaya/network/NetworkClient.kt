@@ -9,37 +9,28 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-class NetworkClient {
-    companion object {
-        private fun getRetrofit(context: Context): Retrofit? {
-            var retrofit: Retrofit? = null
-            val url = context.getString(R.string.URL)
+class NetworkClient(private val context: Context) {
+    private fun formRetrofitInstance(): Retrofit {
+        val url = context.getString(R.string.URL)
 
-            if (retrofit == null) {
-                val client = returnOkHTTPInstance(context)
+        val client = OkHttpClient.Builder()
+            .connectTimeout(10, TimeUnit.SECONDS)
+            .writeTimeout(10, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
 
-                retrofit = Retrofit.Builder()
-                    .baseUrl(url)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
-                    .client(client)
-                    .build()
-            }
-            return retrofit
-        }
+            // Chucker
+            .addInterceptor(ChuckerInterceptor(context))
+            .build()
 
-        private fun returnOkHTTPInstance(context: Context): OkHttpClient {
-            return OkHttpClient.Builder()
-                .connectTimeout(10, TimeUnit.SECONDS)
-                .writeTimeout(10, TimeUnit.SECONDS)
-                .readTimeout(30, TimeUnit.SECONDS)
+        return Retrofit.Builder()
+            .baseUrl(url)
+            .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+            .client(client)
+            .build()
+    }
 
-                // Chucker
-                .addInterceptor(ChuckerInterceptor(context))
-                .build()
-        }
-
-        fun instance(context: Context)
-                = getRetrofit(context)?.create(NetworkInterface::class.java)
+    fun instance(): NetworkInterface {
+        return formRetrofitInstance().create(NetworkInterface::class.java)
     }
 }

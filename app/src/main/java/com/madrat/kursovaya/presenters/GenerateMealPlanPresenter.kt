@@ -14,7 +14,7 @@ class GenerateMealPlanPresenter(private val view: GenerateMealPlanMVP.View,
         val repository = repository.generateMealPlanObservable(
             context, apiKey, timeFrame
         )
-        repository?.subscribe(
+        repository.subscribe(
             {response ->
                 doOnNext(response.meals,
                     response.nutrients)},

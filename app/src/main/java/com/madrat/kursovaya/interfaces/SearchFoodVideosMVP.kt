@@ -19,12 +19,11 @@ interface SearchFoodVideosMVP {
         fun doOnComplete()
     }
     interface Repository {
-
         fun getSearchFoodVideosObservable(
             context: Context,
             apiKey: String,
             query: String,
             number: Int
-        ): Observable<SearchFoodVideosResponse>?
+        ): Observable<SearchFoodVideosResponse>
     }
 }

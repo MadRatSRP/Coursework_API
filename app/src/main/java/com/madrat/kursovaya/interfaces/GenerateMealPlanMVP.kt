@@ -21,11 +21,10 @@ interface GenerateMealPlanMVP {
         fun generateMealPlanData(context: Context, apiKey: String, timeFrame: String)
     }
     interface Repository {
-
         fun generateMealPlanObservable(
             context: Context,
             apiKey: String,
             timeFrame: String
-        ): Observable<GenerateMealPlanResponse>?
+        ): Observable<GenerateMealPlanResponse>
     }
 }

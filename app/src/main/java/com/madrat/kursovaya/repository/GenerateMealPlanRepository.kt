@@ -10,12 +10,13 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 
 class GenerateMealPlanRepository
     : GenerateMealPlanMVP.Repository {
-    override fun generateMealPlanObservable(context: Context, apiKey: String,
+    override fun generateMealPlanObservable(context: Context,
+                                            apiKey: String,
                                             timeFrame: String)
-            : Observable<GenerateMealPlanResponse>? {
-        return NetworkClient.instance(context)
-            ?.generateMealPlan(apiKey, timeFrame)
-            ?.subscribeOn(Schedulers.io())
-            ?.observeOn(AndroidSchedulers.mainThread())
+            : Observable<GenerateMealPlanResponse> {
+        return NetworkClient(context).instance()
+            .generateMealPlan(apiKey, timeFrame)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
     }
 }

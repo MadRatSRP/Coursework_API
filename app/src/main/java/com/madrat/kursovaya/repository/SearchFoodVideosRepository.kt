@@ -12,10 +12,10 @@ class SearchFoodVideosRepository
     : SearchFoodVideosMVP.Repository {
     override fun getSearchFoodVideosObservable(context: Context, apiKey: String,
                                                query: String, number: Int)
-            : Observable<SearchFoodVideosResponse>? {
-        return NetworkClient.instance(context)
-            ?.getSearchFoodVideos(apiKey, query, number)
-            ?.subscribeOn(Schedulers.io())
-            ?.observeOn(AndroidSchedulers.mainThread())
+            : Observable<SearchFoodVideosResponse> {
+        return NetworkClient(context).instance()
+            .getSearchFoodVideos(apiKey, query, number)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
     }
 }
