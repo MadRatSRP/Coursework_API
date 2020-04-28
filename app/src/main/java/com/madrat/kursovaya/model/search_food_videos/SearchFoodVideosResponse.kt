@@ -10,4 +10,5 @@ class SearchFoodVideosResponse(
 
     @field:SerializedName("totalResults")
     @field:Expose
-    val totalResults: Int)
+    val totalResults: Int
+)

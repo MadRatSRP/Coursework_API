@@ -9,4 +9,8 @@
         android:id="@+id/searchFoodVideos"
         android:name="com.madrat.kursovaya.fragments.SearchFoodVideosView"
         android:label="SearchFoodVideosView" />
+    <fragment
+        android:id="@+id/generateMealPlan"
+        android:name="com.madrat.kursovaya.fragments.GenerateMealPlanView"
+        android:label="GenerateMealPlanView" />
 </navigation>

@@ -3,6 +3,9 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/searchFoodVideos"
-            android:title="SearchFoodVideos" />
+            android:title="@string/search_food_videos_title" />
+        <item
+            android:id="@+id/generateMealPlan"
+            android:title="@string/generate_meal_plan_title" />
     </group>
 </menu>

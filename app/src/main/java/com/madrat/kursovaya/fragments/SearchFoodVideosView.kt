@@ -29,6 +29,7 @@ class SearchFoodVideosView
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+        // Initialize ViewBinding
         mBinding = FragmentSearchFoodVideosBinding.inflate(inflater,
             container, false)
         val view = binding.root

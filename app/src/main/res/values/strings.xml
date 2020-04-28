@@ -3,4 +3,12 @@
 
     <string name="URL">https://api.spoonacular.com/</string>
     <string name="API_KEY">bf02524398c84d89b09c4f9f0ac55831</string>
+
+    // SearchFoodVideos
+    <string name="search_food_videos_title">SearchFoodVideos</string>
+
+    // Generate Meal Plan
+    <string name="generate_meal_plan_title">GenerateMealPlan</string>
+    <string name="generate_meal_plan_ready_in_minutes">Ready in minutes:</string>
+    <string name="generate_meal_plan_servings">Servings:</string>
 </resources>
