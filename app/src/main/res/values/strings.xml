@@ -11,4 +11,6 @@
     <string name="generate_meal_plan_title">GenerateMealPlan</string>
     <string name="generate_meal_plan_ready_in_minutes">Ready in minutes:</string>
     <string name="generate_meal_plan_servings">Servings:</string>
+    <string name="open">OPEN</string>
+    <string name="close">CLOSE</string>
 </resources>
