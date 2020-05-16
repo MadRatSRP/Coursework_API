@@ -1,9 +1,11 @@
 package com.madrat.kursovaya.network
 
 import com.madrat.kursovaya.model.generate_meal_plan.GenerateMealPlanResponse
+import com.madrat.kursovaya.model.get_recipe_equipment_by_id.GetRecipeEquipmentByIdResponse
 import com.madrat.kursovaya.model.search_food_videos.SearchFoodVideosResponse
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface NetworkInterface {
@@ -24,4 +26,11 @@ interface NetworkInterface {
                          @Query("diet") diet: String,
                          @Query("diet") diet: String*/)
             : Observable<GenerateMealPlanResponse>
+
+    // Get Recipe Equipment by ID
+    // https://spoonacular.com/food-api/docs#Get-Recipe-Equipment-by-ID
+    @GET("recipes/{id}/equipmentWidget.json")
+    fun getRecipeEquipmentById(@Path("id") recipeId: Int,
+                               @Query("apiKey") apiKey: String)
+            : Observable<GetRecipeEquipmentByIdResponse>
 }

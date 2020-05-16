@@ -7,5 +7,8 @@
         <item
             android:id="@+id/generateMealPlan"
             android:title="@string/generate_meal_plan_title" />
+        <item
+            android:id="@+id/getRecipeEquipmentById"
+            android:title="JJ"/>
     </group>
 </menu>

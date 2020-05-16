@@ -13,4 +13,8 @@
         android:id="@+id/generateMealPlan"
         android:name="com.madrat.kursovaya.fragments.GenerateMealPlanView"
         android:label="GenerateMealPlanView" />
+    <fragment
+        android:id="@+id/getRecipeEquipmentById"
+        android:name="com.madrat.kursovaya.fragments.GetRecipeEquipmentByIdView"
+        android:label="GetRecipeEquipmentByIdView" />
 </navigation>
