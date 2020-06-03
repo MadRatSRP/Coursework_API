@@ -30,4 +30,5 @@ class Video(
 
     @field:SerializedName("youTubeId")
     @field:Expose
-    val youTubeId: String)
+    val youTubeId: String
+)
