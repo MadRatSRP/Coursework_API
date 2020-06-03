@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.madrat.kursovaya.R
 import com.madrat.kursovaya.adapters.GetRecipeEquipmentByIdAdapter
 import com.madrat.kursovaya.databinding.FragmentGetRecipeEquipmentByIdBinding
@@ -18,6 +19,8 @@ import com.madrat.kursovaya.util.linearManager
 
 class GetRecipeEquipmentByIdView
     : Fragment(), GetRecipeEquipmentByIdMVP.View {
+    private val args: GetRecipeEquipmentByIdViewArgs by navArgs()
+
     // ViewBinding variables
     private var mBinding: FragmentGetRecipeEquipmentByIdBinding? = null
     private val binding get() = mBinding!!
@@ -27,7 +30,7 @@ class GetRecipeEquipmentByIdView
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        (activity as AppCompatActivity).supportActionBar?.setTitle("lego")
+        (activity as AppCompatActivity).supportActionBar?.title = "RecipeEquipment"
 
         // Initialize ViewBinding
         mBinding = FragmentGetRecipeEquipmentByIdBinding.inflate(inflater,
@@ -43,7 +46,7 @@ class GetRecipeEquipmentByIdView
         initializePresenter()
 
         presenter?.getRecipeEquipmentByIdData(
-            view.context, 471661,
+            view.context, args.recipeId,
             view.context.getString(R.string.API_KEY)
         )
     }

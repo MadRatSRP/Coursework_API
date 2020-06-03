@@ -8,7 +8,7 @@ buildscript {
     ext.gradleVersion = '4.0.0'
 
     // AndroidX Navigation
-    ext.navigationVersion = '2.2.2'
+    ext.navigationVersion = '2.3.0-beta01'
 
     repositories {
         google()

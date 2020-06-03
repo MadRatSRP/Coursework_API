@@ -12,9 +12,17 @@
     <fragment
         android:id="@+id/generateMealPlan"
         android:name="com.madrat.kursovaya.fragments.GenerateMealPlanView"
-        android:label="GenerateMealPlanView" />
+        android:label="GenerateMealPlanView" >
+        <action
+            android:id="@+id/action_generateMealPlan_to_getRecipeEquipmentById"
+            app:destination="@id/getRecipeEquipmentById" />
+    </fragment>
     <fragment
         android:id="@+id/getRecipeEquipmentById"
         android:name="com.madrat.kursovaya.fragments.GetRecipeEquipmentByIdView"
-        android:label="GetRecipeEquipmentByIdView" />
+        android:label="GetRecipeEquipmentByIdView" >
+        <argument
+            android:name="recipeId"
+            app:argType="integer" />
+    </fragment>
 </navigation>

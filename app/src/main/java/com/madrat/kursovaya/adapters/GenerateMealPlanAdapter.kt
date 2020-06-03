@@ -2,8 +2,10 @@ package com.madrat.kursovaya.adapters
 
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.madrat.kursovaya.R
+import com.madrat.kursovaya.fragments.GenerateMealPlanViewDirections
 import com.madrat.kursovaya.model.generate_meal_plan.Meal
 import com.madrat.kursovaya.util.inflate
 import kotlinx.android.extensions.LayoutContainer
@@ -35,6 +37,17 @@ class GenerateMealPlanAdapter
             ready_in_minutes_value.text = meal.readyInMinutes.toString()
             servings_value.text = meal.servings.toString()
             url.text = meal.sourceUrl
+
+            showRecipeEquipmentButton.setOnClickListener {
+                val action = GenerateMealPlanViewDirections.actionGenerateMealPlanToGetRecipeEquipmentById(
+                    meal.id
+                )
+                Navigation.findNavController(containerView).navigate(action)
+            }
+
+            showRecipeIngredientsButton.setOnClickListener {
+
+            }
         }
     }
 }
