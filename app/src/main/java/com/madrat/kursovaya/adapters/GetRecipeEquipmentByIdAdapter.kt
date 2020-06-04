@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.madrat.kursovaya.R
 import com.madrat.kursovaya.model.get_recipe_equipment_by_id.Equipment
 import com.madrat.kursovaya.util.inflate
+import com.madrat.kursovaya.util.loadImageFromUrl
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_get_recipe_equipment_by_id.*
 
@@ -35,7 +36,11 @@ class GetRecipeEquipmentByIdAdapter
             ready_in_minutes_value.text = meal.readyInMinutes.toString()
             servings_value.text = meal.servings.toString()
             url.text = meal.sourceUrl*/
-            equipmentName.text = equipment.name
+
+            equipment_image.loadImageFromUrl(
+                containerView.context.getString(R.string.base_url_equipment) + equipment.image
+            )
+            equipment_name.text = equipment.name
         }
     }
 }
