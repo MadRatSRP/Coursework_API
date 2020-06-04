@@ -13,6 +13,7 @@
     <string name="generate_meal_plan_servings">Servings:</string>
     <string name="generate_meal_plan_show_equipment">Show equipment</string>
     <string name="generate_meal_plan_show_ingredients">Show ingredients</string>
+    <string name="generate_meal_plan_show_nutrition_value">Show nutrition value</string>
 
 
     <string name="open">OPEN</string>

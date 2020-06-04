@@ -51,6 +51,13 @@ class GenerateMealPlanAdapter
                 )
                 Navigation.findNavController(containerView).navigate(action)
             }
+
+            showRecipeNutritionValueButton.setOnClickListener {
+                val action = GenerateMealPlanViewDirections.actionGenerateMealPlanToGetRecipeNutritionWidgetByIdView(
+                    meal.id
+                )
+                Navigation.findNavController(containerView).navigate(action)
+            }
         }
     }
 }
