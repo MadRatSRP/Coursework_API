@@ -87,4 +87,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/showRecipeIngredientsButton"/>
+    <Button
+        android:id="@+id/show_similair_recipes_button"
+        android:text="@string/generate_meal_plan_show_similar_recipes"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/showRecipeNutritionValueButton"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -38,7 +38,7 @@ class GenerateMealPlanAdapter
 
             menu_image.loadImageFromUrl(
                 containerView.context.getString(
-                    R.string.base_url_menu_items, meal.id, meal.imageType
+                    R.string.base_url_recipes, meal.id, meal.imageType
                 )
             )
 
@@ -62,6 +62,13 @@ class GenerateMealPlanAdapter
 
             showRecipeNutritionValueButton.setOnClickListener {
                 val action = GenerateMealPlanViewDirections.actionGenerateMealPlanToGetRecipeNutritionWidgetByIdView(
+                    meal.id
+                )
+                Navigation.findNavController(containerView).navigate(action)
+            }
+
+            show_similair_recipes_button.setOnClickListener {
+                val action = GenerateMealPlanViewDirections.actionGenerateMealPlanToGetSimilarRecipesView(
                     meal.id
                 )
                 Navigation.findNavController(containerView).navigate(action)

@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_generateMealPlan_to_getRecipeNutritionWidgetByIdView"
             app:destination="@id/getRecipeNutritionWidgetByIdView" />
+        <action
+            android:id="@+id/action_generateMealPlan_to_getSimilarRecipesView"
+            app:destination="@id/getSimilarRecipesView" />
     </fragment>
     <fragment
         android:id="@+id/getRecipeEquipmentById"
@@ -43,6 +46,14 @@
         android:id="@+id/getRecipeNutritionWidgetByIdView"
         android:name="com.madrat.kursovaya.fragments.GetRecipeNutritionWidgetByIdView"
         android:label="GetRecipeNutritionWidgetByIdView" >
+        <argument
+            android:name="recipeId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/getSimilarRecipesView"
+        android:name="com.madrat.kursovaya.fragments.GetSimilarRecipesView"
+        android:label="GetSimilarRecipesView" >
         <argument
             android:name="recipeId"
             app:argType="integer" />

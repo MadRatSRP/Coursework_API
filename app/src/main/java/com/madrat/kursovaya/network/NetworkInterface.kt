@@ -4,6 +4,7 @@ import com.madrat.kursovaya.model.generate_meal_plan.GenerateMealPlanResponse
 import com.madrat.kursovaya.model.get_recipe_equipment_by_id.GetRecipeEquipmentByIdResponse
 import com.madrat.kursovaya.model.get_recipe_ingredients_by_id.GetRecipeIngredientsByIdResponse
 import com.madrat.kursovaya.model.get_recipe_nutrition_widget_by_id.GetRecipeNutritionWidgetByIdResponse
+import com.madrat.kursovaya.model.get_similair_recipes.SimilarRecipe
 import com.madrat.kursovaya.model.search_food_videos.SearchFoodVideosResponse
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET
@@ -49,4 +50,12 @@ interface NetworkInterface {
     fun getRecipeNutritionWidgetById(@Path("id") recipeId: Int,
                                      @Query("apiKey") apiKey: String)
             : Observable<GetRecipeNutritionWidgetByIdResponse>
+
+    // Get Similar Recipes
+    // https://spoonacular.com/food-api/docs#Get-Similar-Recipes
+    @GET("recipes/{id}/similar")
+    fun getSimilarRecipes(@Path("id") recipeId: Int,
+                          @Query("apiKey") apiKey: String,
+                          @Query("number") numberOfRecipes: Int)
+            : Observable<ArrayList<SimilarRecipe>>
 }

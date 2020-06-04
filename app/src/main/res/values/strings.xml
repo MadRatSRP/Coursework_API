@@ -4,7 +4,7 @@
     <string name="URL">https://api.spoonacular.com/</string>
     <string name="base_url_equipment">https://spoonacular.com/cdn/equipment_100x100/</string>
     <string name="base_url_ingredients">https://spoonacular.com/cdn/ingredients_100x100/</string>
-    <string name="base_url_menu_items">https://spoonacular.com/recipeImages/%1$d-240x150.%2$s</string>
+    <string name="base_url_recipes">https://spoonacular.com/recipeImages/%1$d-240x150.%2$s</string>
 
     <string name="API_KEY">bf02524398c84d89b09c4f9f0ac55831</string>
 
@@ -18,6 +18,7 @@
     <string name="generate_meal_plan_show_equipment">Show equipment</string>
     <string name="generate_meal_plan_show_ingredients">Show ingredients</string>
     <string name="generate_meal_plan_show_nutrition_value">Show nutrition value</string>
+    <string name="generate_meal_plan_show_similar_recipes">Show similar recipes</string>
 
 
     <string name="open">OPEN</string>
