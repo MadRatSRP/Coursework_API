@@ -7,6 +7,7 @@ import com.madrat.kursovaya.R
 import com.madrat.kursovaya.model.get_recipe_equipment_by_id.Equipment
 import com.madrat.kursovaya.model.get_recipe_ingredients_by_id.Ingredient
 import com.madrat.kursovaya.util.inflate
+import com.madrat.kursovaya.util.loadImageFromUrl
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_get_recipe_equipment_by_id.*
 import kotlinx.android.synthetic.main.list_get_recipe_ingredients_by_id.*
@@ -34,6 +35,10 @@ class GetRecipeIngredientsByIdAdapter
         : RecyclerView.ViewHolder(containerView), LayoutContainer {
         fun bind(ingredient: Ingredient) {
             ingredient_name.text = ingredient.name
+
+            ingredient_image.loadImageFromUrl(
+                containerView.context.getString(R.string.base_url_ingredients) + ingredient.image
+            )
         }
     }
 }

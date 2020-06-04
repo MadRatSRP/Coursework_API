@@ -2,7 +2,8 @@
     <string name="app_name">Kursovaya</string>
 
     <string name="URL">https://api.spoonacular.com/</string>
-    <string name="base_url_equipment">https://spoonacular.com/cdn/equipment_250x250/</string>
+    <string name="base_url_equipment">https://spoonacular.com/cdn/equipment_100x100/</string>
+    <string name="base_url_ingredients">https://spoonacular.com/cdn/ingredients_100x100/</string>
 
     <string name="API_KEY">bf02524398c84d89b09c4f9f0ac55831</string>
 

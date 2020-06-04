@@ -32,15 +32,11 @@ class GetRecipeEquipmentByIdAdapter
     inner class GetRecipeEquipmentByIdHolder internal constructor(override val containerView: View)
         : RecyclerView.ViewHolder(containerView), LayoutContainer {
         fun bind(equipment: Equipment) {
-            /*title.text = meal.title
-            ready_in_minutes_value.text = meal.readyInMinutes.toString()
-            servings_value.text = meal.servings.toString()
-            url.text = meal.sourceUrl*/
+            equipment_name.text = equipment.name
 
             equipment_image.loadImageFromUrl(
                 containerView.context.getString(R.string.base_url_equipment) + equipment.image
             )
-            equipment_name.text = equipment.name
         }
     }
 }
