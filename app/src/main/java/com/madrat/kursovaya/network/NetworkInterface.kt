@@ -2,6 +2,7 @@ package com.madrat.kursovaya.network
 
 import com.madrat.kursovaya.model.generate_meal_plan.GenerateMealPlanResponse
 import com.madrat.kursovaya.model.get_recipe_equipment_by_id.GetRecipeEquipmentByIdResponse
+import com.madrat.kursovaya.model.get_recipe_ingredients_by_id.GetRecipeIngredientsByIdResponse
 import com.madrat.kursovaya.model.search_food_videos.SearchFoodVideosResponse
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET
@@ -33,4 +34,11 @@ interface NetworkInterface {
     fun getRecipeEquipmentById(@Path("id") recipeId: Int,
                                @Query("apiKey") apiKey: String)
             : Observable<GetRecipeEquipmentByIdResponse>
+
+    // Get Recipe Ingredients by ID
+    // https://spoonacular.com/food-api/docs#Get-Recipe-Ingredients-by-ID
+    @GET("recipes/{id}/ingredientWidget.json")
+    fun getRecipeIngredientsById(@Path("id") recipeId: Int,
+                                 @Query("apiKey") apiKey: String)
+            : Observable<GetRecipeIngredientsByIdResponse>
 }

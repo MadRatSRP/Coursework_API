@@ -6,5 +6,5 @@ import com.google.gson.annotations.SerializedName
 class GetRecipeEquipmentByIdResponse(
     @field:SerializedName("equipment")
     @field:Expose
-    val equipment: ArrayList<Equipment>
+    val listOfEquipment: ArrayList<Equipment>
 )

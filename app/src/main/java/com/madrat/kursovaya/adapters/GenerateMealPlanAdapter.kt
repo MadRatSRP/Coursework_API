@@ -46,7 +46,10 @@ class GenerateMealPlanAdapter
             }
 
             showRecipeIngredientsButton.setOnClickListener {
-
+                val action = GenerateMealPlanViewDirections.actionGenerateMealPlanToGetRecipeIngredientsByIdView(
+                    meal.id
+                )
+                Navigation.findNavController(containerView).navigate(action)
             }
         }
     }

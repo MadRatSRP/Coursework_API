@@ -16,11 +16,22 @@
         <action
             android:id="@+id/action_generateMealPlan_to_getRecipeEquipmentById"
             app:destination="@id/getRecipeEquipmentById" />
+        <action
+            android:id="@+id/action_generateMealPlan_to_getRecipeIngredientsByIdView"
+            app:destination="@id/getRecipeIngredientsByIdView" />
     </fragment>
     <fragment
         android:id="@+id/getRecipeEquipmentById"
         android:name="com.madrat.kursovaya.fragments.GetRecipeEquipmentByIdView"
         android:label="GetRecipeEquipmentByIdView" >
+        <argument
+            android:name="recipeId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/getRecipeIngredientsByIdView"
+        android:name="com.madrat.kursovaya.fragments.GetRecipeIngredientsByIdView"
+        android:label="GetRecipeIngredientsByIdView" >
         <argument
             android:name="recipeId"
             app:argType="integer" />

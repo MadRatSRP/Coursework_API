@@ -15,7 +15,7 @@ class GetRecipeEquipmentByIdPresenter(private val view: GetRecipeEquipmentByIdMV
         )
         repository.subscribe(
             {response ->
-                doOnNext(response.equipment)},
+                doOnNext(response.listOfEquipment)},
             {throwable->
                 doOnError(context, throwable)},
             { doOnComplete() })
