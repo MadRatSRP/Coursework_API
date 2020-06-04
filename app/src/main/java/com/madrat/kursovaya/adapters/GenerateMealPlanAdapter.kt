@@ -8,6 +8,7 @@ import com.madrat.kursovaya.R
 import com.madrat.kursovaya.fragments.GenerateMealPlanViewDirections
 import com.madrat.kursovaya.model.generate_meal_plan.Meal
 import com.madrat.kursovaya.util.inflate
+import com.madrat.kursovaya.util.loadImageFromUrl
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_generate_meal_plan.*
 
@@ -34,6 +35,13 @@ class GenerateMealPlanAdapter
         : RecyclerView.ViewHolder(containerView), LayoutContainer {
         fun bind(meal: Meal) {
             title.text = meal.title
+
+            menu_image.loadImageFromUrl(
+                containerView.context.getString(
+                    R.string.base_url_menu_items, meal.id, meal.imageType
+                )
+            )
+
             ready_in_minutes_value.text = meal.readyInMinutes.toString()
             servings_value.text = meal.servings.toString()
             url.text = meal.sourceUrl
