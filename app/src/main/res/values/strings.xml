@@ -2,6 +2,7 @@
     <string name="app_name">Kursovaya</string>
 
     <string name="URL">https://api.spoonacular.com/</string>
+    <string name="base_url_youtube">https://www.youtube.com/watch?v=%1$s</string>
     <string name="base_url_equipment">https://spoonacular.com/cdn/equipment_100x100/</string>
     <string name="base_url_ingredients">https://spoonacular.com/cdn/ingredients_100x100/</string>
     <string name="base_url_recipes">https://spoonacular.com/recipeImages/%1$d-240x150.%2$s</string>
@@ -10,6 +11,7 @@
 
     // SearchFoodVideos
     <string name="search_food_videos_title">SearchFoodVideos</string>
+    <string name="search_food_videos_watch_video_on_youtube">Watch video on YouTube</string>
 
     // Generate Meal Plan
     <string name="generate_meal_plan_title">GenerateMealPlan</string>
