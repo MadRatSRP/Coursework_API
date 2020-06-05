@@ -14,6 +14,7 @@ import com.madrat.kursovaya.interfaces.SearchFoodVideosMVP
 import com.madrat.kursovaya.model.search_food_videos.Video
 import com.madrat.kursovaya.presenters.SearchFoodVideosPresenter
 import com.madrat.kursovaya.repository.SearchFoodVideosRepository
+import com.madrat.kursovaya.util.hideKeyboardAndClearFocus
 import com.madrat.kursovaya.util.linearManager
 
 class SearchFoodVideosView
@@ -34,6 +35,8 @@ class SearchFoodVideosView
             container, false)
         val view = binding.root
 
+        binding.setupSearchQuery.hideKeyboardAndClearFocus{}
+
         adapter = SearchFoodVideosAdapter()
 
         binding.recyclerView.linearManager()
@@ -46,10 +49,12 @@ class SearchFoodVideosView
 
         initializePresenter()
 
-        presenter?.getSearchFoodVideosData(
-            view.context, view.context.getString(R.string.API_KEY),
-            "chicken soup", 3
-        )
+        binding.searchFoodVideosButton.setOnClickListener {
+            presenter?.getSearchFoodVideosData(
+                view.context, view.context.getString(R.string.API_KEY),
+                binding.setupSearchQuery.text.toString(), 3
+            )
+        }
     }
     override fun onDestroyView() {
         super.onDestroyView()

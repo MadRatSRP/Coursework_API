@@ -4,15 +4,38 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/search_layout"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+        <EditText
+            android:id="@+id/setup_search_query"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:inputType="text"
+            android:imeOptions="actionDone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"/>
+        <ImageButton
+            android:id="@+id/search_food_videos_button"
+            android:src="@drawable/ic_baseline_search_24"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"/>
+    </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:visibility="invisible"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/search_layout"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
