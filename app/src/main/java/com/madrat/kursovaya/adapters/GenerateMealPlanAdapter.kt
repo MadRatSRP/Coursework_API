@@ -1,5 +1,7 @@
 package com.madrat.kursovaya.adapters
 
+import android.content.Intent
+import android.net.Uri
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
@@ -44,7 +46,12 @@ class GenerateMealPlanAdapter
 
             ready_in_minutes_value.text = meal.readyInMinutes.toString()
             servings_value.text = meal.servings.toString()
-            url.text = meal.sourceUrl
+
+            show_recipe_website_button.setOnClickListener {
+                val intent = Intent(Intent.ACTION_VIEW)
+                intent.data = Uri.parse(meal.sourceUrl)
+                containerView.context.startActivity(intent)
+            }
 
             showRecipeEquipmentButton.setOnClickListener {
                 val action = GenerateMealPlanViewDirections.actionGenerateMealPlanToGetRecipeEquipmentById(

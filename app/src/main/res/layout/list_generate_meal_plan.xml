@@ -22,7 +22,7 @@
         app:layout_constraintTop_toBottomOf="@id/title"/>
     <LinearLayout
         android:id="@+id/ready_in_minutes_layout"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/menu_image">
@@ -42,6 +42,7 @@
     </LinearLayout>
     <LinearLayout
         android:id="@+id/servings_layout"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/ready_in_minutes_layout">
@@ -59,9 +60,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
     </LinearLayout>
-    <TextView
-        android:id="@+id/url"
-        android:gravity="center"
+    <Button
+        android:id="@+id/show_recipe_website_button"
+        android:text="@string/generate_meal_plan_show_recipe_website"
         android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -72,7 +73,7 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/url"/>
+        app:layout_constraintTop_toBottomOf="@id/show_recipe_website_button"/>
     <Button
         android:id="@+id/showRecipeIngredientsButton"
         android:text="@string/generate_meal_plan_show_ingredients"
