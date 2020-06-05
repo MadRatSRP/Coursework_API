@@ -4,11 +4,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.madrat.kursovaya.R
-import com.madrat.kursovaya.model.get_recipe_ingredients_by_id.Ingredient
 import com.madrat.kursovaya.model.get_recipe_nutrition_widget_by_id.Nutrition
 import com.madrat.kursovaya.util.inflate
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.list_get_recipe_ingredients_by_id.*
 import kotlinx.android.synthetic.main.list_get_recipe_nutrition_widget_by_id.*
 
 class NutritionalValueAdapter
@@ -33,7 +31,13 @@ class NutritionalValueAdapter
     inner class NutritionalValueHolder internal constructor(override val containerView: View)
         : RecyclerView.ViewHolder(containerView), LayoutContainer {
         fun bind(nutrition: Nutrition) {
-            example.text = nutrition.title
+            nutrition_title_and_amount.text = containerView.context.getString(
+                R.string.nutritions_nutrition_title_and_amount, nutrition.title, nutrition.amount
+            )
+
+            nutrition_daily_needs.text = containerView.context.getString(
+                R.string.nutritions_daily_needs, nutrition.percentOfDailyNeeds
+            )
         }
     }
 }

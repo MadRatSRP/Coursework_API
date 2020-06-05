@@ -23,7 +23,12 @@
     <string name="generate_meal_plan_show_nutrition_value">Show nutrition value</string>
     <string name="generate_meal_plan_show_similar_recipes">Show similar recipes</string>
 
-
+    // Get Recipe Nutrition Widget by Id
+    <string name="nutritions_bad_nutritions_title">Bad Nutritions</string>
+    <string name="nutritions_good_nutritions_title">Good Nutritions</string>
+    <string name="nutritions_nutrition_title_and_amount">%1$s: %2$s</string>
+    <string name="nutritions_daily_needs">Percent of daily needs: %1$f</string>
+    
     <string name="open">OPEN</string>
     <string name="close">CLOSE</string>
 </resources>

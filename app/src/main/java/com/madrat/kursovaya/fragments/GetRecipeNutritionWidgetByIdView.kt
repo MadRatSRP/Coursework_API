@@ -9,16 +9,12 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.madrat.kursovaya.R
-import com.madrat.kursovaya.adapters.GetRecipeIngredientsByIdAdapter
 import com.madrat.kursovaya.adapters.get_recipe_nutrition_widget_by_id.NutritionalValueAdapter
-import com.madrat.kursovaya.databinding.FragmentGetRecipeEquipmentByIdBinding
 import com.madrat.kursovaya.databinding.FragmentGetRecipeNutritionWidgetByIdBinding
 import com.madrat.kursovaya.interfaces.GetRecipeNutritionWidgetByIdMVP
-import com.madrat.kursovaya.model.get_recipe_ingredients_by_id.Ingredient
+import com.madrat.kursovaya.model.get_recipe_nutrition_widget_by_id.GetRecipeNutritionWidgetByIdResponse
 import com.madrat.kursovaya.model.get_recipe_nutrition_widget_by_id.Nutrition
-import com.madrat.kursovaya.presenters.GetRecipeIngredientsByIdPresenter
 import com.madrat.kursovaya.presenters.GetRecipeNutritionWidgetByIdPresenter
-import com.madrat.kursovaya.repository.GetRecipeIngredientsByIdRepository
 import com.madrat.kursovaya.repository.GetRecipeNutritionWidgetByIdRepository
 import com.madrat.kursovaya.util.linearManager
 
@@ -30,7 +26,8 @@ class GetRecipeNutritionWidgetByIdView
     private var mBinding: FragmentGetRecipeNutritionWidgetByIdBinding? = null
     private val binding get() = mBinding!!
 
-    private var adapter: NutritionalValueAdapter? = null
+    private var badNutritionsAdapter: NutritionalValueAdapter? = null
+    private var goodNutritionsAdapter: NutritionalValueAdapter? = null
     private var presenter: GetRecipeNutritionWidgetByIdPresenter? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -58,10 +55,14 @@ class GetRecipeNutritionWidgetByIdView
 
     // Initialization
     override fun initializeAdapterAndRecyclerView() {
-        adapter = NutritionalValueAdapter()
+        badNutritionsAdapter = NutritionalValueAdapter()
+        goodNutritionsAdapter = NutritionalValueAdapter()
 
-        binding.recyclerView.linearManager()
-        binding.recyclerView.adapter = adapter
+        binding.badNutritionsRecyclerView.linearManager()
+        binding.badNutritionsRecyclerView.adapter = badNutritionsAdapter
+
+        binding.goodNutritionsRecyclerView.linearManager()
+        binding.goodNutritionsRecyclerView.adapter = badNutritionsAdapter
     }
     override fun initializePresenter() {
         presenter = GetRecipeNutritionWidgetByIdPresenter(
@@ -70,11 +71,22 @@ class GetRecipeNutritionWidgetByIdView
     }
 
     // Update UI after receiving data
-    override fun showListOfNutritions(listOfNutritions: ArrayList<Nutrition>) {
-        adapter?.updateListOfNutritions(listOfNutritions)
-        binding.recyclerView.adapter = adapter
+    override fun loadDataIntoViews(response: GetRecipeNutritionWidgetByIdResponse) {
+        showListOfBadNutritions(response.listOfBadNutritions)
+
+        showListOfGoodNutritions(response.listOfGoodNutritions)
     }
+    override fun showListOfBadNutritions(listOfBadNutritions: ArrayList<Nutrition>) {
+        badNutritionsAdapter?.updateListOfNutritions(listOfBadNutritions)
+        binding.badNutritionsRecyclerView.adapter = badNutritionsAdapter
+    }
+    override fun showListOfGoodNutritions(listOfGoodNutritions: ArrayList<Nutrition>) {
+        goodNutritionsAdapter?.updateListOfNutritions(listOfGoodNutritions)
+        binding.goodNutritionsRecyclerView.adapter = goodNutritionsAdapter
+    }
+
+    // Show Views with loaded data
     override fun showRecyclerView() {
-        binding.recyclerView.isVisible = true
+        binding.badNutritionsRecyclerView.isVisible = true
     }
 }

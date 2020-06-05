@@ -2,12 +2,22 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginBottom="25dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <TextView
-        android:id="@+id/example"
+        android:id="@+id/nutrition_title_and_amount"
+        android:textSize="16sp"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:id="@+id/nutrition_daily_needs"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/nutrition_title_and_amount"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,14 +9,15 @@ interface GetRecipeNutritionWidgetByIdMVP {
     interface View {
         fun initializeAdapterAndRecyclerView()
         fun initializePresenter()
-        fun showListOfNutritions(listOfNutritions: ArrayList<Nutrition>)
         fun showRecyclerView()
+        fun loadDataIntoViews(response: GetRecipeNutritionWidgetByIdResponse)
+        fun showListOfBadNutritions(listOfBadNutritions: ArrayList<Nutrition>)
+        fun showListOfGoodNutritions(listOfGoodNutritions: ArrayList<Nutrition>)
     }
     interface Presenter {
 
         fun doOnError(context: Context, throwable: Throwable)
         fun doOnComplete()
-        fun doOnNext(listOfNutritions: ArrayList<Nutrition>)
         fun getRecipeNutritionWidgetByIdData(context: Context, recipeId: Int, apiKey: String)
     }
     interface Repository {
