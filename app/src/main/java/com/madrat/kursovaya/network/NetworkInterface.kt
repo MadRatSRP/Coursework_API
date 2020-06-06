@@ -6,6 +6,7 @@ import com.madrat.kursovaya.model.get_recipe_ingredients_by_id.GetRecipeIngredie
 import com.madrat.kursovaya.model.get_recipe_nutrition_widget_by_id.GetRecipeNutritionWidgetByIdResponse
 import com.madrat.kursovaya.model.get_similair_recipes.SimilarRecipe
 import com.madrat.kursovaya.model.search_food_videos.SearchFoodVideosResponse
+import com.madrat.kursovaya.model.search_menu_items.SearchMenuItemsResponse
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -58,4 +59,12 @@ interface NetworkInterface {
                           @Query("apiKey") apiKey: String,
                           @Query("number") numberOfRecipes: Int)
             : Observable<ArrayList<SimilarRecipe>>
+
+    // Search Menu Items
+    // https://spoonacular.com/food-api/docs#Search-Menu-Items
+    @GET("food/menuItems/search")
+    fun searchMenuItems(@Query("apiKey") apiKey: String,
+                        @Query("query") searchQuery: String,
+                        @Query("number") number: Int)
+            : Observable<SearchMenuItemsResponse>
 }

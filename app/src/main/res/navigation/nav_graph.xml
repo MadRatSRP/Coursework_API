@@ -58,4 +58,8 @@
             android:name="recipeId"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/searchMenuItems"
+        android:name="com.madrat.kursovaya.fragments.SearchMenuItemsView"
+        android:label="SearchMenuItemsView" />
 </navigation>

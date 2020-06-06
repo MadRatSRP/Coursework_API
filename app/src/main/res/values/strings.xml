@@ -28,6 +28,9 @@
     <string name="nutritions_good_nutritions_title">Good Nutritions</string>
     <string name="nutritions_nutrition_title_and_amount">%1$s: %2$s</string>
     <string name="nutritions_daily_needs">Percent of daily needs: %1$f</string>
+
+    // Search Menu Items
+    <string name="search_menu_items_title">Search Menu Items</string>
     
     <string name="open">OPEN</string>
     <string name="close">CLOSE</string>
