@@ -38,6 +38,8 @@ class SearchMenuItemsView
             container, false)
         val view = binding.root
 
+        binding.setupSearchQuery.hideKeyboardAndClearFocus {  }
+
         adapter = SearchMenuItemsAdapter()
 
         binding.recyclerView.linearManager()
