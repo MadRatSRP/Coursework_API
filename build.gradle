@@ -3,9 +3,9 @@ buildscript {
         // Android Gradle plugin
         gradleVersion = '4.2.2'
         // Kotlin
-        kotlinVersion = '1.3.72'
+        kotlinVersion = '1.5.21'
         // Jetpack Navigation (+ Safe-Args)
-        navigationVersion = '2.3.0'
+        navigationVersion = '2.3.5'
     }
     repositories {
         google()
