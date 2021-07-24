@@ -33,7 +33,7 @@ android {
 ext {
     // Network && Threads
     // Chucker
-    chuckerVersion = "3.5.1"
+    chuckerVersion = "3.4.0"
     // Google Gson
     googleGsonVersion = '2.8.7'
     // Glide
@@ -113,6 +113,4 @@ repositories {
     google()
     // RxAndroid
     maven { url "https://oss.jfrog.org/libs-snapshot" }
-    // Chucker
-    maven { url "https://jitpack.io" }
 }

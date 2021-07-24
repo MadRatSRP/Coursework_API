@@ -12,10 +12,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-// ViewGroup
-fun ViewGroup.inflate(layoutRes: Int): View
-        = LayoutInflater.from(context).inflate(layoutRes, this, false)
-
 // RecyclerView
 fun RecyclerView.linearManager() {
     this.layoutManager = LinearLayoutManager(context)
