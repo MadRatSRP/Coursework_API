@@ -1,22 +1,16 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: "androidx.navigation.safeargs.kotlin"
-
-androidExtensions {
-    experimental = true
-}
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "29.0.2"
+    buildToolsVersion "30.0.3"
     defaultConfig {
         applicationId "com.madrat.kursovaya"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -32,8 +26,8 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8
     }
-    viewBinding {
-        enabled = true
+    buildFeatures {
+        viewBinding true
     }
 }
 ext {
@@ -77,8 +71,8 @@ dependencies {
 
     // Network && Threads
     // Chucker
-    debugImplementation "com.github.ChuckerTeam.Chucker:library:$chuckerVersion"
-    releaseImplementation "com.github.ChuckerTeam.Chucker:library-no-op:$chuckerVersion"
+    debugImplementation "com.github.chuckerteam.chucker:library:$chuckerVersion"
+    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:$chuckerVersion"
     // Google Gson
     implementation "com.google.code.gson:gson:$googleGsonVersion"
     // Glide
@@ -115,10 +109,10 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$junitRunnerVersion"
 }
 repositories {
-    // RxAndroid
-    maven { url "https://oss.jfrog.org/libs-snapshot" }
-
-    // Glide
     mavenCentral()
     google()
+    // RxAndroid
+    maven { url "https://oss.jfrog.org/libs-snapshot" }
+    // Chucker
+    maven { url "https://jitpack.io" }
 }
