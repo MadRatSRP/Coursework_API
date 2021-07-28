@@ -33,7 +33,7 @@ android {
 ext {
     // Network && Threads
     // Chucker
-    chuckerVersion = "3.4.0"
+    chuckerVersion = '3.5.0'
     // Google Gson
     googleGsonVersion = '2.8.7'
     // Glide

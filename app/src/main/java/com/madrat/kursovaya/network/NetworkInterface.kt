@@ -1,12 +1,12 @@
 package com.madrat.kursovaya.network
 
-import com.madrat.kursovaya.model.generate_meal_plan.GenerateMealPlanResponse
-import com.madrat.kursovaya.model.get_recipe_equipment_by_id.GetRecipeEquipmentByIdResponse
-import com.madrat.kursovaya.model.get_recipe_ingredients_by_id.GetRecipeIngredientsByIdResponse
-import com.madrat.kursovaya.model.get_recipe_nutrition_widget_by_id.GetRecipeNutritionWidgetByIdResponse
-import com.madrat.kursovaya.model.get_similair_recipes.SimilarRecipe
-import com.madrat.kursovaya.model.search_food_videos.SearchFoodVideosResponse
-import com.madrat.kursovaya.model.search_menu_items.SearchMenuItemsResponse
+import com.madrat.kursovaya.screens.generatemealplan.model.GenerateMealPlanResponse
+import com.madrat.kursovaya.screens.getrecipeequipmentbyid.model.GetRecipeEquipmentByIdResponse
+import com.madrat.kursovaya.screens.getrecipeingredientsbyid.model.GetRecipeIngredientsByIdResponse
+import com.madrat.kursovaya.screens.getrecipenutritionwidgetbyid.model.GetRecipeNutritionWidgetByIdResponse
+import com.madrat.kursovaya.screens.getsimilairrecipes.model.SimilarRecipe
+import com.madrat.kursovaya.screens.searchfoodvideos.model.SearchFoodVideosResponse
+import com.madrat.kursovaya.screens.searchmenuitems.model.SearchMenuItemsResponse
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.http.GET
 import retrofit2.http.Path

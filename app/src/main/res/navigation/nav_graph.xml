@@ -7,11 +7,11 @@
 
     <fragment
         android:id="@+id/searchFoodVideos"
-        android:name="com.madrat.kursovaya.fragments.SearchFoodVideosView"
+        android:name="com.madrat.kursovaya.screens.searchfoodvideos.SearchFoodVideosView"
         android:label="SearchFoodVideosView" />
     <fragment
         android:id="@+id/generateMealPlan"
-        android:name="com.madrat.kursovaya.fragments.GenerateMealPlanView"
+        android:name="com.madrat.kursovaya.screens.generatemealplan.GenerateMealPlanView"
         android:label="GenerateMealPlanView" >
         <action
             android:id="@+id/action_generateMealPlan_to_getRecipeEquipmentById"
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/getRecipeEquipmentById"
-        android:name="com.madrat.kursovaya.fragments.GetRecipeEquipmentByIdView"
+        android:name="com.madrat.kursovaya.screens.getrecipeequipmentbyid.GetRecipeEquipmentByIdView"
         android:label="GetRecipeEquipmentByIdView" >
         <argument
             android:name="recipeId"
@@ -36,7 +36,7 @@
     </fragment>
     <fragment
         android:id="@+id/getRecipeIngredientsByIdView"
-        android:name="com.madrat.kursovaya.fragments.GetRecipeIngredientsByIdView"
+        android:name="com.madrat.kursovaya.screens.getrecipeingredientsbyid.GetRecipeIngredientsByIdView"
         android:label="GetRecipeIngredientsByIdView" >
         <argument
             android:name="recipeId"
@@ -44,7 +44,7 @@
     </fragment>
     <fragment
         android:id="@+id/getRecipeNutritionWidgetByIdView"
-        android:name="com.madrat.kursovaya.fragments.GetRecipeNutritionWidgetByIdView"
+        android:name="com.madrat.kursovaya.screens.getrecipenutritionwidgetbyid.GetRecipeNutritionWidgetByIdView"
         android:label="GetRecipeNutritionWidgetByIdView" >
         <argument
             android:name="recipeId"
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/getSimilarRecipesView"
-        android:name="com.madrat.kursovaya.fragments.GetSimilarRecipesView"
+        android:name="com.madrat.kursovaya.screens.getsimilairrecipes.GetSimilarRecipesView"
         android:label="GetSimilarRecipesView" >
         <argument
             android:name="recipeId"
@@ -60,6 +60,6 @@
     </fragment>
     <fragment
         android:id="@+id/searchMenuItems"
-        android:name="com.madrat.kursovaya.fragments.SearchMenuItemsView"
+        android:name="com.madrat.kursovaya.screens.searchmenuitems.SearchMenuItemsView"
         android:label="SearchMenuItemsView" />
 </navigation>
