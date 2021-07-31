@@ -3,13 +3,14 @@ package com.madrat.kursovaya.screens.getrecipeingredientsbyid
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.madrat.kursovaya.R
 import com.madrat.kursovaya.databinding.ListGetRecipeIngredientsByIdBinding
 import com.madrat.kursovaya.screens.getrecipeingredientsbyid.model.Ingredient
-import com.madrat.kursovaya.util.loadImageFromUrl
 
-class GetRecipeIngredientsByIdAdapter
-    : RecyclerView.Adapter<GetRecipeIngredientsByIdAdapter.GetRecipeIngredientByIdHolder>() {
+class GetRecipeIngredientsByIdAdapter: RecyclerView.Adapter<
+    GetRecipeIngredientsByIdAdapter.GetRecipeIngredientByIdHolder
+>() {
     private val listOfIngredients = ArrayList<Ingredient>()
 
     fun updateListOfIngredients(
@@ -42,7 +43,7 @@ class GetRecipeIngredientsByIdAdapter
             with(binding) {
                 ingredientName.text = ingredient.name
     
-                ingredientImage.loadImageFromUrl(
+                ingredientImage.load(
                     root.context.getString(R.string.base_url_ingredients) + ingredient.image
                 )
             }

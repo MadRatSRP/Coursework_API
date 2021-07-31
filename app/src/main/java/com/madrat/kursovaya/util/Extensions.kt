@@ -1,25 +1,15 @@
 package com.madrat.kursovaya.util
 
 import android.content.Context
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
-import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 
 // RecyclerView
 fun RecyclerView.linearManager() {
     this.layoutManager = LinearLayoutManager(context)
-}
-
-// ImageView
-fun ImageView.loadImageFromUrl(url: String) {
-    Glide.with(context).load(url).into(this)
 }
 
 inline fun EditText.hideKeyboardAndClearFocus(crossinline function: () -> Unit) {

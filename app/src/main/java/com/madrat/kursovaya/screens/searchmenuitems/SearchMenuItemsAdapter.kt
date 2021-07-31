@@ -5,11 +5,13 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.madrat.kursovaya.databinding.ListSearchMenuItemsBinding
 import com.madrat.kursovaya.screens.searchmenuitems.model.MenuItem
-import com.madrat.kursovaya.util.loadImageFromUrl
 
-class SearchMenuItemsAdapter: RecyclerView.Adapter<SearchMenuItemsAdapter.SearchMenuItemsHolder>() {
+class SearchMenuItemsAdapter: RecyclerView.Adapter<
+    SearchMenuItemsAdapter.SearchMenuItemsHolder
+>() {
     private val listOfMenuItems = ArrayList<MenuItem>()
     
     fun updateListOfMenuItems(newListOfMenuItems: ArrayList<MenuItem>) {
@@ -40,7 +42,7 @@ class SearchMenuItemsAdapter: RecyclerView.Adapter<SearchMenuItemsAdapter.Search
             with(binding) {
                 title.text = menuItem.title
                 
-                image.loadImageFromUrl(menuItem.imageUrl)
+                image.load(menuItem.imageUrl)
                 
                 root.setOnClickListener {
                     val intent = Intent(Intent.ACTION_VIEW)

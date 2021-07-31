@@ -7,8 +7,9 @@ import com.madrat.kursovaya.R
 import com.madrat.kursovaya.databinding.ListGetRecipeNutritionWidgetByIdBinding
 import com.madrat.kursovaya.screens.getrecipenutritionwidgetbyid.model.Nutrition
 
-class NutritionalValueAdapter
-    : RecyclerView.Adapter<NutritionalValueAdapter.NutritionalValueHolder>() {
+class NutritionalValueAdapter: RecyclerView.Adapter<
+    NutritionalValueAdapter.NutritionalValueHolder
+>() {
     private val listOfNutritions = ArrayList<Nutrition>()
 
     fun updateListOfNutritions(newListOfNutritions: ArrayList<Nutrition>) {

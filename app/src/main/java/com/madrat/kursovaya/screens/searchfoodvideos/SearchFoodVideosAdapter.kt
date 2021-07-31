@@ -5,13 +5,14 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.madrat.kursovaya.R
 import com.madrat.kursovaya.databinding.ListSearchFoodVideosBinding
 import com.madrat.kursovaya.screens.searchfoodvideos.model.Video
-import com.madrat.kursovaya.util.loadImageFromUrl
 
-class SearchFoodVideosAdapter
-    : RecyclerView.Adapter<SearchFoodVideosAdapter.SearchFoodVideosHolder>() {
+class SearchFoodVideosAdapter: RecyclerView.Adapter<
+    SearchFoodVideosAdapter.SearchFoodVideosHolder
+>() {
     private val listOfVideos = ArrayList<Video>()
 
     fun updateListOfVideos(newListOfVideos: ArrayList<Video>) {
@@ -42,7 +43,7 @@ class SearchFoodVideosAdapter
             with(binding) {
                 title.text = video.title
     
-                videoPreviewImage.loadImageFromUrl(video.thumbnail)
+                videoPreviewImage.load(video.thumbnail)
     
                 watchVideoOnYoutubeButton.setOnClickListener {
                     val videoUrl = root.context.getString(

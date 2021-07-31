@@ -3,13 +3,14 @@ package com.madrat.kursovaya.screens.getsimilairrecipes
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.madrat.kursovaya.R
 import com.madrat.kursovaya.databinding.ListGetSimilarRecipesBinding
 import com.madrat.kursovaya.screens.getsimilairrecipes.model.SimilarRecipe
-import com.madrat.kursovaya.util.loadImageFromUrl
 
-class GetSimilarRecipesAdapter
-    : RecyclerView.Adapter<GetSimilarRecipesAdapter.GetSimilarRecipesHolder>() {
+class GetSimilarRecipesAdapter: RecyclerView.Adapter<
+    GetSimilarRecipesAdapter.GetSimilarRecipesHolder
+>() {
     private val listOfSimilarRecipes = ArrayList<SimilarRecipe>()
 
     fun updateListOfSimilarRecipes(newListOfSimilarRecipes: ArrayList<SimilarRecipe>) {
@@ -40,7 +41,7 @@ class GetSimilarRecipesAdapter
             with(binding) {
                 title.text = similarRecipe.title
     
-                image.loadImageFromUrl(
+                image.load(
                     root.context.getString(
                         R.string.base_url_recipes,
                         similarRecipe.id,

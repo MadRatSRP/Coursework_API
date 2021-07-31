@@ -3,13 +3,14 @@ package com.madrat.kursovaya.screens.getrecipeequipmentbyid
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.madrat.kursovaya.R
 import com.madrat.kursovaya.databinding.ListGetRecipeEquipmentByIdBinding
 import com.madrat.kursovaya.screens.getrecipeequipmentbyid.model.Equipment
-import com.madrat.kursovaya.util.loadImageFromUrl
 
-class GetRecipeEquipmentByIdAdapter
-    : RecyclerView.Adapter<GetRecipeEquipmentByIdAdapter.GetRecipeEquipmentByIdHolder>() {
+class GetRecipeEquipmentByIdAdapter: RecyclerView.Adapter<
+    GetRecipeEquipmentByIdAdapter.GetRecipeEquipmentByIdHolder
+>() {
     private val listOfEquipments = ArrayList<Equipment>()
 
     fun updateListOfEquipments(newListOfEquipments: ArrayList<Equipment>) {
@@ -39,7 +40,7 @@ class GetRecipeEquipmentByIdAdapter
             with(binding) {
                 equipmentName.text = equipment.name
     
-                equipmentImage.loadImageFromUrl(
+                equipmentImage.load(
                     root.context.getString(R.string.base_url_equipment) + equipment.image
                 )
             }

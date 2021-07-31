@@ -6,12 +6,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.madrat.kursovaya.R
 import com.madrat.kursovaya.databinding.ListGenerateMealPlanBinding
 import com.madrat.kursovaya.screens.generatemealplan.model.Meal
-import com.madrat.kursovaya.util.loadImageFromUrl
 
-class GenerateMealPlanAdapter : RecyclerView.Adapter<GenerateMealPlanAdapter.GenerateMealPlanHolder>() {
+class GenerateMealPlanAdapter: RecyclerView.Adapter<
+    GenerateMealPlanAdapter.GenerateMealPlanHolder
+>() {
     private val listOfMeals = ArrayList<Meal>()
 
     fun updateListOfMeals(newListOfMeals: ArrayList<Meal>) {
@@ -43,7 +45,7 @@ class GenerateMealPlanAdapter : RecyclerView.Adapter<GenerateMealPlanAdapter.Gen
                 
                 val holderContext = binding.root.context
                 
-                menuImage.loadImageFromUrl(
+                menuImage.load(
                     holderContext.getString(
                         R.string.base_url_recipes, meal.id, meal.imageType
                     )
