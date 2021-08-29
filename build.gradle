@@ -1,9 +1,9 @@
 buildscript {
     ext {
         // Android Gradle plugin
-        gradleVersion = '7.0.0'
+        gradleVersion = '7.0.1'
         // Kotlin
-        kotlinVersion = '1.5.21'
+        kotlinVersion = '1.5.30'
         // Jetpack Navigation (+ Safe-Args)
         navigationVersion = '2.3.5'
     }

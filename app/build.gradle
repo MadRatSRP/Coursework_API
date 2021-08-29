@@ -33,13 +33,13 @@ android {
 ext {
     // Network && Threads
     // Chucker
-    chuckerVersion = '3.5.0'
+    chuckerVersion = '3.5.2'
     // Google Gson
-    googleGsonVersion = '2.8.7'
+    googleGsonVersion = '2.8.8'
     // Coil
-    coilVersion = "1.3.1"
+    coilVersion = '1.3.2'
     // RxJava|RxAndroid
-    rxJavaVersion = "3.0.13"
+    rxJavaVersion = '3.1.0'
     rxAndroidVersion = "3.0.0"
     // Retrofit|Retrofit Converter Gson|Retrofit RxJava3 Adapter
     retrofitVersion = '2.9.0'
@@ -48,7 +48,7 @@ ext {
 
     // Jetpack
     // ConstraintLayout
-    constraintVersion = "2.0.4"
+    constraintVersion = '2.1.0'
     // Material Design Components
     materialVersion = '1.4.0'
 
